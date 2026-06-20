@@ -24,7 +24,7 @@ R = Responsible · A = Accountable · C = Consulted · I = Informed
 | Change-control decisions | R | A | C | I | I | I |
 
 **Notes**
-- The Head of Credit is **Accountable** on every gate as sponsor; you (the BA) are **Responsible**
+- The Head of Credit is **Accountable** on every gate as sponsor; Deepak Nepram (the BA) are **Responsible**
   for driving each to a decision.
 - Compliance is **Consulted** on the rules and the dashboard release (auditability and geographic
   concentration — the latter is the driver behind change request CR-001 later in the project).

@@ -8,8 +8,8 @@
 |---|---|
 | **Project** | Credit Decisioning & Portfolio Insights Dashboard |
 | **Sponsor** | Head of Credit |
-| **Business Analyst** | [Your name] |
-| **Date** | [date] |
+| **Business Analyst** | Deepak Nepram |
+| **Date** | 18-06-2026 |
 | **Status** | Initiated |
 
 ## 1. Background
