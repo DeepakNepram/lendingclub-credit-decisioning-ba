@@ -1,0 +1,17 @@
+ID,Epic,Story,MoSCoW,Points,Sprint,Traces
+US-01,E1 Data Foundation,"As a Data Lead, I want the accepted file ingested with only the 25 governed fields so that the pipeline is lean and auditable",Must,5,Sprint 1,FR-001
+US-02,E1 Data Foundation,"As a Data Lead, I want the rejected file standardized (snake_case names, stripped %, parsed dates) so that funnel metrics are computable",Must,5,Sprint 1,FR-002
+US-03,E1 Data Foundation,"As a Risk Analyst, I want documented cleaning and derived fields so that every number is reproducible",Must,5,Sprint 1,FR-003/004
+US-04,E1 Data Foundation,"As a Data Lead, I want one script producing all samples and aggregates with a fixed seed so that outputs are rebuildable",Must,3,Sprint 1,FR-005
+US-05,E1 Data Foundation,"As a Compliance Officer, I want a data-quality report on each run so that known issues are visible",Must,3,Sprint 1,FR-006
+US-06,E1 Data Foundation,"As the Head of Credit, I want a governed KPI dictionary so that definitions stop drifting",Must,2,Sprint 1,FR-007
+US-07,E2 Decisioning Rules,"As the Head of Credit, I want a documented rules catalog so that review criteria are defensible",Must,3,Sprint 2,FR-008
+US-08,E2 Decisioning Rules,"As an Operations Manager, I want manual_review_flag computed per application so that queue volume is forecastable",Must,5,Sprint 2,FR-009
+US-09,E2 Decisioning Rules,"As the Head of Credit, I want each rule's threshold backed by data evidence so that rules survive challenge",Could,3,Sprint 2,FR-012
+US-10,E2 Decisioning Rules,"As an Operations Manager, I want a review-queue specification so that the future tool is buildable",Should,3,Sprint 2,FR-010
+US-11,E3 Dashboard,"As the Head of Credit, I want a 5-KPI executive overview with trends so that portfolio health is visible at a glance",Must,5,Sprint 1,FR-014/015
+US-12,E3 Dashboard,"As a Risk Analyst, I want charge-off views by grade x term, purpose, and vintage so that I can spot deteriorating cohorts",Must,5,Sprint 2,FR-016/018
+US-13,E3 Dashboard,"As the Head of Credit, I want accepted-vs-rejected profile comparisons so that policy thresholds are validated",Should,3,Sprint 2,FR-017
+US-14,E3 Dashboard,"As a Risk Analyst, I want year/grade/purpose/term filters and a public link so that analysis is self-serve",Must,3,Sprint 2,FR-019/020
+US-15,E3 Dashboard,"As the Sponsor, I want a written walkthrough and UAT support so that release is sign-off ready",Must,2,Sprint 2,"FR-020, BR-10"
+US-16,E3 Dashboard,"As a Compliance Officer, I want a state-level concentration map so that geographic risk is reportable",Must,5,Sprint 2 (CR-001),FR-021
