@@ -1,0 +1,52 @@
+
+================================================================
+VALIDATION BLOCK  (LendingClub prepare_data.py)
+RANDOM_SEED = 42
+================================================================
+
+[ROW ACCOUNTING]
+  accepted rows in     : 2,260,701
+  accepted rows dropped: 33   (null loan_amnt = footer rows)
+  accepted rows out    : 2,260,668
+  rejected total rows  : 27,648,741
+  rejected unparsed dates: 0
+  rejected dti null after clean: 0
+  rejected dti excluded from buckets (null/neg): 1,203,063
+
+[NULL % AFTER CLEANING - accepted key fields]
+  loan_amnt     : 0.0000%
+  term          : 0.0000%
+  emp_length    : 6.4984%
+  dti           : 0.0757%
+  fico_mid      : 0.0000%
+  grade         : 0.0000%
+  issue_month   : 0.0000%
+  addr_state    : 0.0000%
+
+[GOVERNED FLAG SUMS - accepted]
+  charge_off_flag sum : 269,320      (expect 269,320)
+  resolved_flag   sum : 1,348,059    (expect 1,348,059)
+  default_flag    sum : 40          (expect 40)
+
+[PORTFOLIO RATES]
+  overall approval rate (full data)      : 7.5584%
+  resolved charge-off rate (CO|resolved) : 19.9784%   (expect ~20%)
+  manual_review_flag share of accepted   : 6.7696%
+
+[RULE EVIDENCE]
+  RULE-01 fico_range_low: min=610  p1=660  p5=660
+  RULE-02 share dti > 40                       : 1.2022%
+  RULE-03 CO rate | grade in EFG AND term==60  : 44.2168%  (n_resolved=90,183)
+  RULE-04 share NotVerified AND loan_amnt>20k  : 4.4318%
+  RULE-06 CO rate | purpose==small_business    : 29.8645%  (n_resolved=15,577)
+          (portfolio resolved CO rate for ref  : 19.9784%)
+
+[OUTPUT FILES - 05-data/samples/]
+  rejected sample fraction used: 0.010850
+  accepted_sample.csv   :  113,565 rows     23,906,744 bytes  ( 22.80 MB)
+  rejected_sample.csv   :  299,989 rows     23,333,682 bytes  ( 22.25 MB)
+  monthly_funnel.csv    :      140 rows          6,507 bytes  (  0.01 MB)
+  dti_comparison.csv    :       26 rows            616 bytes  (  0.00 MB)
+  state_summary.csv     :       51 rows          2,536 bytes  (  0.00 MB)
+  (CLAUDE.md cap enforced: each file < 24 MB)
+================================================================
