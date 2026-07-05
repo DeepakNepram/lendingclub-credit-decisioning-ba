@@ -1,0 +1,69 @@
+==============================================================================
+DASHBOARD KPI VALIDATION - independent recomputation from 05-data/samples/
+(does not import prepare_data.py; reference values from cleaning-report.txt)
+==============================================================================
+
+[TC-04] Overall approval rate = Sn_accepted / Sapplications (monthly_funnel)
+       expected = 0.075584
+       actual   = 0.075584
+       tol      = +/-0.0001   -> PASS
+
+[TC-07] state_summary: 51 rows; approval_rate in [0.02,0.12]; no null funded_amnt
+       expected = 51 rows; appr in [0.02,0.12]; funded_amnt non-null
+       actual   = 51 rows; appr in [0.0298,0.0991]; funded nulls=0
+       tol      = exact   -> PASS
+
+[TC-06] dti_comparison: 26 rows (13 buckets x 2 pops); rejected '60+' = 3,108,473
+       expected = 26 rows; rejected 60+ = 3,108,473
+       actual   = 26 rows; rejected 60+ = 3,108,473
+       tol      = exact   -> PASS
+
+[TC-06] dti_comparison: accepted bucketed count total (valid dti)
+       expected = accepted total = 2,258,955
+       actual   = accepted total = 2,258,955
+       tol      = exact (warn)   -> PASS
+
+[TC-03] Charge-off rate (resolved basis) from accepted_sample
+       expected = 0.199784
+       actual   = 0.198772
+       tol      = +/-0.005   -> PASS
+
+[TC-05] Pooled CO rate | grade in EFG AND term==60 (resolved n=4,584)
+       expected = 0.442168
+       actual   = 0.453970
+       tol      = +/-0.02   -> PASS
+
+[TC-11] manual_review_flag mean (share of funded book)
+       expected = 0.067696
+       actual   = 0.067336
+       tol      = +/-0.005   -> PASS
+
+[SANITY] fico_band set exact; issue_year spans 2007..2018; no null loan_amnt
+       expected = bands={<660,660-699,700-739,740-779,780+}; years 2007..2018; loan_amnt nulls=0
+       actual   = bands=['660-699', '700-739', '740-779', '780+', '<660']; years 2007..2018; loan_amnt nulls=0
+       tol      = exact   -> PASS
+
+[TC-10] cleaning-report.txt exists and contains flag-sum '269,320'
+       expected = file exists; contains '269,320'
+       actual   = exists=True; contains_269320=True
+       tol      = exact   -> PASS
+
+==============================================================================
+RESULTS TABLE
+==============================================================================
+| UAT     | Check                                        | Expected     | Actual       | Tol       | Result |
+|---------|----------------------------------------------|--------------|--------------|-----------|--------|
+| TC-04   | Overall approval rate = Sn_accepted / Sap... | 0.075584     | 0.075584     | +/-0.0001 | PASS   |
+| TC-07   | state_summary: 51 rows; approval_rate in ... | 51 rows; app | 51 rows; app | exact     | PASS   |
+| TC-06   | dti_comparison: 26 rows (13 buckets x 2 p... | 26 rows; rej | 26 rows; rej | exact     | PASS   |
+| TC-06   | dti_comparison: accepted bucketed count t... | accepted tot | accepted tot | exact (wa | PASS   |
+| TC-03   | Charge-off rate (resolved basis) from acc... | 0.199784     | 0.198772     | +/-0.005  | PASS   |
+| TC-05   | Pooled CO rate | grade in EFG AND term==6... | 0.442168     | 0.453970     | +/-0.02   | PASS   |
+| TC-11   | manual_review_flag mean (share of funded ... | 0.067696     | 0.067336     | +/-0.005  | PASS   |
+| SANITY  | fico_band set exact; issue_year spans 200... | bands={<660, | bands=['660- | exact     | PASS   |
+| TC-10   | cleaning-report.txt exists and contains f... | file exists; | exists=True; | exact     | PASS   |
+|---------|----------------------------------------------|--------------|--------------|-----------|--------|
+
+HARD CHECKS: 8/8 passed
+OVERALL: ALL HARD CHECKS PASS  (exit 0)
+==============================================================================
