@@ -4,8 +4,8 @@
 
 | | |
 |---|---|
-| **Date** | [date] |
-| **Attendees** | [Your name] (BA); Head of Credit (Sponsor) |
+| **Date** | 19-06-2026 |
+| **Attendees** | Deepak Nepram (BA); Head of Credit (Sponsor) |
 | **Purpose** | Elicit portfolio-insight gaps, risk-metric definitions, and adoption criteria |
 
 ## Key findings

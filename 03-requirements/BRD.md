@@ -62,6 +62,7 @@ MoSCoW priority. Every requirement traces to a source interview (MoM).
 | **BR-08** | Documented data-quality assessment and data dictionary | Must | Trustworthy numbers require documented data handling; also underpins auditability | MoM-02 |
 | **BR-09** | Self-serve filtering for the Credit team (≤ 3 clicks to any KPI) | Should | Eliminates the recurring ad-hoc-pull burden; the dashboard delivers value even before full self-serve polish | MoM-02 |
 | **BR-10** | Dashboard numbers validated against independent cross-checks before release | Must | Directly prevents the "wrong board number" failure; the release gate | MoM-02 |
+| **BR-11** | Geographic concentration reporting — a state-level view of approval rate and funded volume | Must | Added via CR-001; a standing board/regulator question previously answered manually | CR-001 |
 
 **Note on BR-06 (the prioritization decision):** Credit wants stricter review thresholds; Ops needs
 review volume bounded by capacity. Rather than pick a side, BR-06 is prioritized as a **Should** so

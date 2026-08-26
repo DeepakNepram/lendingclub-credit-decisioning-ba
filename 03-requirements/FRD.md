@@ -6,7 +6,7 @@
 | | |
 |---|---|
 | **Document** | FRD · v1 |
-| **Author** | [Your name], Business Analyst |
+| **Author** | Deepak Nepram, Business Analyst |
 | **Audience** | Data/IT Lead, Credit Risk Analyst, Operations Manager, Head of Credit |
 | **Traceability** | Every functional requirement traces to a business requirement in `BRD.md`. The full BR → FR → Story → Test chain is maintained in `07-testing/rtm.xlsx`. |
 
@@ -51,20 +51,21 @@ requirement. Business rules and non-functional requirements follow the functiona
 | **FR-018** | Vintage-year charge-off development view | BR-07 |
 | **FR-019** | Global filters (year, grade, purpose, term) reaching any KPI in ≤ 3 clicks | BR-09 |
 | **FR-020** | Published public dashboard link plus a written walkthrough | BR-01 |
+| **FR-021** | State-level concentration map (approval rate / funded volume by state) | BR-11 |
 
 ## 3. Business-rules catalog
 Each rule routes an application to a review action. Thresholds change only via change control (FR-011)
 and each must be backed by data evidence (FR-012). The **evidence** column is completed from the Day 9
 analysis — values below are placeholders pending that computation, never asserted from memory.
 
-| ID | Rule statement | Action | Data evidence (confirm in Day 9 analysis) | Traces |
+| ID | Rule statement | Action | Data evidence (Day 9 analysis, full data) | Traces |
 |---|---|---|---|---|
-| **RULE-01** | FICO below the policy floor (≈ 660) | Outside credit policy | Verify the floor visibly in the accepted `fico_range` distribution before asserting it | FR-008 |
-| **RULE-02** | DTI > 40% | Route to manual review | Compute flagged share; `dti` present, 2,563 out-of-range values flagged not deleted | FR-009 |
-| **RULE-03** | Grade E–G **and** term = 60 months | Enhanced review | Justify with charge-off rate by grade × term; grades E/F/G = 135,639 / 41,800 / 12,168 loans | FR-009 |
-| **RULE-04** | Income unverified **and** loan_amnt > $20,000 | Income verification | Size the affected share; `verification_status` present | FR-009 |
-| **RULE-05** | Segment with vintage charge-off > 1.5× portfolio average | Threshold review | Portfolio resolved charge-off ≈ 20% → ≈ 30% trigger; compute per vintage | FR-008 |
-| **RULE-06** | Small-business purpose | Heightened monitoring | Compute its charge-off rate; small_business = 24,689 loans | FR-008 |
+| **RULE-01** | FICO below the policy floor (660) | Outside credit policy | **Floor confirmed at 660:** 1st and 5th percentile of `fico_range_low` both = 660 (≥95% of funded loans at/above 660); min of 610 reflects legacy pre-policy exceptions | FR-008 |
+| **RULE-02** | DTI > 40% | Route to manual review | 1.20% of funded loans exceed DTI 40 (threshold largely screens at application); 2,563 out-of-range DTI values flagged, not deleted | FR-009 |
+| **RULE-03** | Grade E–G **and** term = 60 months | Enhanced review | **44.2% resolved charge-off vs 19.98% portfolio average — 2.2×** (n = 90,183 resolved loans) | FR-009 |
+| **RULE-04** | Income unverified **and** loan_amnt > $20,000 | Income verification | 4.43% of funded loans are income-unverified with loan_amnt > $20,000 | FR-009 |
+| **RULE-05** | Segment with vintage charge-off > 1.5× portfolio average | Threshold review | Portfolio resolved charge-off = 19.98% → 1.5× trigger ≈ 30.0%; applied per vintage/segment | FR-008 |
+| **RULE-06** | Small-business purpose | Heightened monitoring | **29.9% resolved charge-off vs 19.98% portfolio — ~1.5×** (n = 15,577 resolved loans) | FR-008 |
 
 ## 4. Non-functional requirements
 | ID | Non-functional requirement |

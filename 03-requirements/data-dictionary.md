@@ -6,7 +6,7 @@
 | | |
 |---|---|
 | **Document** | Data Dictionary · v1 |
-| **Author** | [Your name], Business Analyst |
+| **Author** | Deepak Nepram, Business Analyst |
 | **Scope** | The 25 governed fields ingested from the accepted file by `05-data/profile_data.py`, plus 7 derived fields. |
 | **Traceability** | Field set traces to **FR-001** (ingest 25 governed fields) and **FR-004** (derive governed fields). Cleaning rules trace to **FR-003**. |
 

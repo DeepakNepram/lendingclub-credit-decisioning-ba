@@ -4,8 +4,8 @@
 
 | | |
 |---|---|
-| **Date** | [date] |
-| **Attendees** | [Your name] (BA); Operations Manager |
+| **Date** | 19-06-2026 |
+| **Attendees** | Deepak Nepram (BA); Operations Manager |
 | **Purpose** | Understand the reporting workflow, definition conflicts, review capacity, and release expectations |
 
 ## Key findings
