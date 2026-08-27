@@ -36,6 +36,6 @@ cites those printouts; no figure is asserted from memory.
 
 ## Confidence
 Cleaning is fully reproducible (single script, `RANDOM_SEED = 42`, pinned to the governed definitions
-in `CLAUDE.md`). The three governed flag sums reconcile to the integer against the loan_status counts,
+in `kpi-dictionary.md`). The three governed flag sums reconcile to the integer against the loan_status counts,
 and post-clean null rates reconcile with the pre-clean profile minus the 33 dropped rows — independent
 confirmation the pipeline behaved as specified.

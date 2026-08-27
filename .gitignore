@@ -4,3 +4,4 @@ data_raw/
 .ipynb_checkpoints/
 __pycache__/
 _planning/
+CLAUDE.md

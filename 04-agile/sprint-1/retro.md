@@ -11,6 +11,6 @@
   footer-row rule).
 
 **Continue**
-- Governing ambiguous definitions in `CLAUDE.md` as the single source of truth.
+- Governing ambiguous definitions in the KPI dictionary as the single source of truth.
 - The chunked-read approach for the 27.6M-row rejected file.
 - Daily commits with phase-tagged messages.
